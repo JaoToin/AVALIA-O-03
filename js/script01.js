@@ -1,4 +1,4 @@
-
+import { valorAdcional } from "./script02.js"
 
 
 
@@ -64,6 +64,6 @@ const listImovel = () => {
     //13.percorrendo o array com a estrutura de repetição foreach
 
     imoveis.forEach((elem, i)=>{
-        divResult.innerHTML += `<div class='item-veiculos'> ${i + 1} - MODELO DO CARRO: ${elem.modelos} -- MARCA DO CARRO:${elem.marcas}  -- PLACA DO CARRO: ${elem.placas} -- ANOS APOS A FABRICAÇÃO: ${elem.anos} -- VALOR DO CARRO:${parseFloat(elem.valores).toFixed(2).replace('.',',')} -- O VALOR DO SEGURO SERA R$ ${parseFloat(elem.valores * 0.10).toFixed(2).replace('.',',')} -- ${descontoIPVA(elem)} </div> <br>`
+        divResult.innerHTML += `<div class='item-veiculos'> ${i + 1} - DESCRIÇÃO: ${elem.descricao} -- LARGURA:${elem.largura}  -- COMPRIMENTO: ${elem.comprimento} -- ÁREA: ${metros} -- VALOR DO LOTE: R$ ${parseFloat(valorAdcional).toFixed(2).replace('.',',')} --  R$ ${parseFloat(elem.valores * 0.10).toFixed(2).replace('.',',')} -- ${descontoIPVA(elem)} </div> <br>`
     })
 }
