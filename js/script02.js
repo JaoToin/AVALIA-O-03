@@ -1,22 +1,21 @@
-const valorAdcional = (objImovel) => {
+const valorAdcional = (objAdicional) => {
 
     let resposta = ''
 
-   
 
-    if ((objImovel.metros <= 20000)) {
-        resposta = "ISENTO DE DESCONTO"
-    } else if ((objImovel.metros > 20000) && (objImovel.metros <= 100000)) {
-        resposta = "DESCONTO ADICIONAL DE :"(objImovel.metros * 0.05)
+    if (( objAdicional.valores <= 20000)) {
+       resposta =  "ISENTO DE DESCONTO"
+    } else if ((objAdicional.valores > 20000) && (objAdicional.valores <= 100000)) {
+        resposta = "DESCONTO ADICIONAL DE :" + ((objAdicional.valores) * 0.05)
 
-    } else if ((objImovel.metros >= 100000) && (objImovel.metros <= 500000)) {
-        resposta = "DESCONTO ADICIONAL DE :" (objImovel.metros * 0.10)
+    } else if ((objAdicional.valores >= 100000) && (objAdicional.valores<= 500000)) {
+         resposta = "DESCONTO ADICIONAL DE :" + ((objAdicional.valores) * 0.10)
 
-    } else if ((objImovel.metros >= 500000) && (objImovel.metros <= 1000000)) {
-        resposta = "DESCONTO ADICIONAL DE :" (objImovel.metros * 0.15)
+    } else if ((objAdicional.valores >= 500000) && (objAdicional.valores <= 1000000)) {
+        resposta = "DESCONTO ADICIONAL DE :" + ((objAdicional.valores) * 0.15)
 
-    } else if ((objImovel.metros > 1000000)) {
-        resposta = "DESCONTO ADICIONAL DE :" (objImovel.metros * 0.20)
+    } else if ((objAdicional.valores > 1000000)) {
+       resposta = "DESCONTO ADICIONAL DE : R$ " + (objAdicional.valores * (0.20)) + ",00"
 
     }
 

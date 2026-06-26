@@ -19,11 +19,14 @@ const divResult = document.querySelector('#div-result')
 formImovel.addEventListener('submit', (evt)=>{
 
 
+    
+
+
     //4.interrompendo o efeito padrão do formulario
 
     evt.preventDefault()
 
-    let metros = ((elem.comprimento * elem.largura) * 550)
+   
 
     //5.criando e preenchendo o objeto literal pessoa 
 
@@ -32,10 +35,14 @@ formImovel.addEventListener('submit', (evt)=>{
     const imovel = {
         descricao: dadosForm.get('descricao'),
         comprimento: dadosForm.get('comprimento'),
-        largura: dadosForm.get('largura')
+        largura: dadosForm.get('largura'),
+        valores: (dadosForm.get('largura') * dadosForm.get('comprimento') * (550))
+       
+       
 
     }
 
+    
     //6.chamando a função e passando o objeto literl
     addImovel(imovel)
 
@@ -64,6 +71,6 @@ const listImovel = () => {
     //13.percorrendo o array com a estrutura de repetição foreach
 
     imoveis.forEach((elem, i)=>{
-        divResult.innerHTML += `<div class='item-veiculos'> ${i + 1} - DESCRIÇÃO: ${elem.descricao} -- LARGURA:${elem.largura}  -- COMPRIMENTO: ${elem.comprimento} -- ÁREA: ${metros} -- VALOR DO LOTE: R$ ${parseFloat(valorAdcional).toFixed(2).replace('.',',')} --  R$ ${parseFloat(elem.valores * 0.10).toFixed(2).replace('.',',')} -- ${descontoIPVA(elem)} </div> <br>`
+        divResult.innerHTML += `<div class='item-veiculos'> ${i + 1} - DESCRIÇÃO: ${elem.descricao} -- LARGURA:${elem.largura}  -- COMPRIMENTO: ${elem.comprimento} -- ÁREA: ${(elem.largura) * (elem.comprimento)}m² -- VALOR DO LOTE: R$ ${parseFloat(elem.valores).toFixed(2).replace('.',',')} -- ${valorAdcional(elem)} </div> <br>`
     })
 }
